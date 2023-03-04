@@ -30,7 +30,7 @@ Future showSuccess({
     borderColor: Colors.green,
     borderRadius: BorderRadius.circular(8.r),
     margin: EdgeInsets.symmetric(horizontal: 16.w),
-    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 32.h),
     messageText: Text(
       message ?? 'Successful',
       style: TextStyle(

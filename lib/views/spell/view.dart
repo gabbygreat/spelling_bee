@@ -5,6 +5,8 @@ class SpellView extends StatelessView<SpellScreen, SpellController> {
 
   @override
   Widget build(BuildContext context) {
+    final count = controller.ref.watch(spellingCount);
+
     return Scaffold(
       backgroundColor: darkPurpleColor,
       appBar: AppBar(
@@ -17,37 +19,22 @@ class SpellView extends StatelessView<SpellScreen, SpellController> {
           ),
           onPressed: () => Navigator.of(context).pop(),
         ),
-      ),
-      body: Column(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height * 0.53,
-            width: MediaQuery.of(context).size.width,
-            padding: EdgeInsets.symmetric(horizontal: 45.w),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(90.r),
-                bottomRight: Radius.circular(90.r),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 20.w),
+            child: CircleAvatar(
+              backgroundColor: primaryColor,
+              child: Text(
+                '$count',
+                style: TextStyle(
+                  color: purpleColor,
+                ),
               ),
-              color: whiteColor,
             ),
-            child: Column(
-              children: [
-                const Spacer(),
-                const SpellBoxRow(
-                  word: 'Hello',
-                ),
-                SizedBox(
-                  height: 100.h,
-                ),
-              ],
-            ),
-          ),
-          const SpellKeypad(
-            word: 'Hello',
           )
         ],
       ),
+      body: const SpellViewBoby(),
     );
   }
 }

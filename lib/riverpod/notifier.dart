@@ -1,7 +1,7 @@
 import '../utils/utils.dart';
 
-class SpellNotifier extends StateNotifier<List<String>> {
-  SpellNotifier(super.state);
+class MissingNotifier extends StateNotifier<List<String>> {
+  MissingNotifier(super.state);
 
   void addText(String text, String word, BuildContext context) {
     if (state.length < word.length) {

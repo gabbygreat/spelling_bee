@@ -1,0 +1,4 @@
+enum CategoryScreen {
+  spell,
+  missing,
+}

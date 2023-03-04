@@ -39,6 +39,9 @@ dependencies:
   flutter_svg: ^2.0.2
   flutter_screenutil: ^5.6.1
   another_flushbar: ^1.12.29
+  text_to_speech: ^0.2.3
+  hive: ^2.2.3
+  path_provider: ^2.0.13
 
 dev_dependencies:
   flutter_test:

@@ -1,9 +1,13 @@
+import 'package:spelling_bee/views/missing/controller.dart';
+
 import '../utils/utils.dart';
 
 class HomeSectionCard extends StatefulWidget {
   final String cardText;
+  final CategoryScreen screen;
   const HomeSectionCard({
     required this.cardText,
+    required this.screen,
     super.key,
   });
 
@@ -15,8 +19,16 @@ class _HomeSectionCardState extends State<HomeSectionCard> {
   void openSpellScreen() {
     Navigator.of(context).push(
       PageRouteBuilder(
-        pageBuilder: (context, animation, secondaryAnimation) =>
-            const SpellScreen(),
+        pageBuilder: (context, animation, secondaryAnimation) {
+          switch (widget.screen) {
+            case CategoryScreen.missing:
+              return const MissingScreen();
+            case CategoryScreen.spell:
+              return const SpellScreen();
+            default:
+              return const Text('data');
+          }
+        },
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(0.0, 1.0);
           const end = Offset.zero;

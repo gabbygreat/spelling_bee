@@ -1,20 +1,20 @@
 import '../utils/utils.dart';
 
-class SpellBoxRow extends ConsumerStatefulWidget {
+class MissingBoxRow extends ConsumerStatefulWidget {
   final String word;
-  const SpellBoxRow({
+  const MissingBoxRow({
     required this.word,
     super.key,
   });
 
   @override
-  ConsumerState<SpellBoxRow> createState() => _SpellBoxRowState();
+  ConsumerState<MissingBoxRow> createState() => _MissingBoxRowState();
 }
 
-class _SpellBoxRowState extends ConsumerState<SpellBoxRow> {
+class _MissingBoxRowState extends ConsumerState<MissingBoxRow> {
   @override
   Widget build(BuildContext context) {
-    final spelling = ref.watch(spellProvider);
+    final missing = ref.watch(missingProvider);
     return Wrap(
       runAlignment: WrapAlignment.center,
       crossAxisAlignment: WrapCrossAlignment.center,
@@ -23,7 +23,7 @@ class _SpellBoxRowState extends ConsumerState<SpellBoxRow> {
       children: [
         for (var i = 0; i <= widget.word.length - 1; i++)
           SpellBox(
-            text: i < spelling.length ? spelling.elementAt(i) : null,
+            text: i < missing.length ? missing.elementAt(i) : null,
           ),
       ],
     );

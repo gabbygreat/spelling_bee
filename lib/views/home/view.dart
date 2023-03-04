@@ -37,7 +37,7 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Let\'s Discover...',
+                    'Choose a category',
                     style: TextStyle(
                       fontFamily: 'TiltNeon',
                       fontSize: 45.sp,
@@ -46,10 +46,12 @@ class HomeView extends StatelessView<HomeScreen, HomeController> {
                   ),
                   SizedBox(height: 60.h),
                   const HomeSectionCard(
-                    cardText: 'Bedroom',
+                    cardText: 'Spell it',
+                    screen: CategoryScreen.spell,
                   ),
                   const HomeSectionCard(
-                    cardText: 'Sitting Room',
+                    cardText: 'Missi_g word',
+                    screen: CategoryScreen.missing,
                   )
                 ],
               ),

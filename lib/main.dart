@@ -1,6 +1,7 @@
 import 'utils/utils.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       builder: (context, _) {
         return MaterialApp(
           title: 'Spelling Bee',
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),

@@ -8,3 +8,4 @@ export 'global_variables.dart';
 export 'mvc/mvc.dart';
 export 'packages.dart';
 export 'functions/show_flush.dart';
+export 'functions/speech.dart';
